@@ -1,14 +1,13 @@
-
 #Labs-Cache Lab
 ---
 
 ## Part A Implement a cache simulator
-- Programming Rules
-	- It uses **LRU**(least-recently used)replacement policy
-	- Part A only interests in data cache performance
+* Programming Rules
+	* It uses **LRU**(least-recently used)replacement policy
+	* Part A only interests in data cache performance
 
-- Programming Reflection
-	- `malloc`
+* Programming Reflection
+	* `malloc`
 	
 		```
 		#include <stdlib.h>
@@ -23,7 +22,7 @@
 		}
 		free(array);
 		``` 
-	- How to define a set and the use of `struct`
+	* How to define a set and the use of `struct`
 	  
 	  	```
 		// one set struct definition
@@ -33,7 +32,7 @@
 			clock_t *lastAccessTime; //array
 		}
 		```
-	- Handle the *load* operation(load)
+	* Handle the *load* operation(load)
 	
 		```
 		load(){
@@ -48,9 +47,9 @@
 					LRU-replace;
 		}
 		``` 
-	- Handle the *store* operation(write)
-		- This lab does not involved the write strategy (write-throught/write-back) 	
-		- When write not hit(miss), it is prefered to use **write-allocate** in CSAPP, which refers to **load** the data from the lower cache hierarchy.
+	* Handle the *store* operation(write)
+		* This lab does not involved the write strategy (write-throught/write-back) 	
+		* When write not hit(miss), it is prefered to use **write-allocate** in CSAPP, which refers to **load** the data from the lower cache hierarchy.
 
 		```
 		store(){
@@ -60,8 +59,8 @@
 				load();
 		}
 		```
-	- Handle the *modify* operation:
-		- combine load and store
+	* Handle the *modify* operation:
+		* combine load and store
 
 
 
